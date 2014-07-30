@@ -15,6 +15,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+gem 'slim', '~> 2.0.3'
+gem 'slim-rails'
+
 group :development do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
