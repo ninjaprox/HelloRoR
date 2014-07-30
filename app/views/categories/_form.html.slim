@@ -1,24 +1,9 @@
-= form_for(@category) do |f|
+= form_for @category do |f|
   - if @category.errors.any?
-    <div id="error_explanation">
-      <h2>
-        = pluralize(@category.errors.count, "error")
-        prohibited this category from being saved:
-      </h2>
+    #error_explanation
+      h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+      ul
+        - @category.errors.full_messages.each do |message|
+          li = message
 
-      <ul>
-        - for message in @category.errors.full_messages.each do
-        <li>
-          = message
-        </li>
-      </ul>
-    </div>
-
-  <div class="field">
-    = f.label :name
-    <br>
-    = f.text_field :name
-  </div>
-  <div class="actions">
-    = f.submit
-  </div>
+  .actions = f.submit 'Save'
