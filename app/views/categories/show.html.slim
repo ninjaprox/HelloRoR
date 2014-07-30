@@ -1,6 +1,23 @@
 p#notice = notice
 
-
+= @category.name
+||
 = link_to 'Edit', edit_category_path(@category)
-'|
+||
 = link_to 'Back', categories_path
+br/
+table
+  thead
+    tr
+      th
+      th
+      th
+      th
+
+  tbody
+    - @category.products.each do |product|
+      tr
+        td = product.name
+        td = link_to 'Show', product
+        td = link_to 'Edit', edit_product_path(product)
+        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete

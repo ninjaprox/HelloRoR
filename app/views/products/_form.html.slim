@@ -5,5 +5,12 @@
       ul
         - @product.errors.full_messages.each do |message|
           li = message
-
+  = f.label :name
+  = f.text_field :name
+  br/
+  = f.label :price
+  = f.text_field :price
+  br/
+  = f.label :category_id
+  = f.text_field :category_id
   .actions = f.submit 'Save'
