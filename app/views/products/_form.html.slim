@@ -12,5 +12,5 @@
   = f.text_field :price
   br/
   = f.label :category_id
-  = f.text_field :category_id
+  = collection_select :product, :category_id, @categories, :id, :name
   .actions = f.submit 'Save'
