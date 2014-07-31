@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.category_id = params[:category_id]
   end
 
   def edit

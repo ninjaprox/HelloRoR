@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   resources :products
-  resources :categories
+  resources :categories do
+    resources :products, only: [:new]
+  end
 
   root 'static_pages#home'
 
