@@ -15,7 +15,7 @@ class API < Grape::API
     end
 
     post do
-      User.create(name: params[:name], link: params[:link])
+      User.create(name: params[:name], fb_link: params[:link])
     end
   end
 end
